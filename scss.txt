@@ -1,0 +1,112 @@
+//colors
+$color_gallery_approx: #eee;
+$color_chenin_approx: #ddca7e;
+$white: #fff;
+$color_log_cabin_approx: #222;
+$color_silver_chalice_approx: #aaa;
+
+//fonts
+$font_0: Helvetica;
+$font_1: Arial;
+$font_2: sans-serif;
+
+//urls
+$url_0: url("../images/sunshine.jpg");
+$url_1: url("../images/sky_bg.jpg");
+
+* {
+	//Instead of the line below you could use @includebox-sizing($bs)
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: all 1s ease;
+	&:after {
+		//Instead of the line below you could use @includebox-sizing($bs)
+		box-sizing: border-box;
+	}
+	&:before {
+		//Instead of the line below you could use @includebox-sizing($bs)
+		box-sizing: border-box;
+	}
+}
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+}
+.main {
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+}
+h2 {
+	text-align: center;
+	text-transform: uppercase;
+	font: 70px $font_0, $font_1, $font_2;
+	margin-bottom: 20px;
+	&:after {
+		content: " On";
+	}
+}
+.features {
+	width: 940px;
+	margin: 0 auto 30px auto;
+	p {
+		width: 33.33%;
+		float: left;
+		padding: 0 20px;
+		font: 13px/1.5 Helvetica, Arial, sans-serif;
+	}
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+.last {
+	padding-right: 0;
+}
+.headerimage {
+	height: 400px;
+	width: 970px;
+	margin: 0 auto;
+	background: $url_0;
+}
+label {
+	display: block;
+	height: 25px;
+	width: 100px;
+	background: $color_gallery_approx;
+	text-align: center;
+	font: 14px/25px $font_0, $font_1, $font_2;
+	margin: 20px 0;
+	position: fixed;
+	&:hover {
+		background: $color_chenin_approx;
+		color: $white;
+		cursor: pointer;
+	}
+}
+input#lightswitch {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+	&:checked + .main {
+		background: $color_log_cabin_approx;
+		h2 {
+			color: $color_chenin_approx;
+			&:after {
+				content: " Off";
+			}
+		}
+		p {
+			color: $color_silver_chalice_approx;
+		}
+		> .headerimage {
+			background: $url_1;
+			border: 8px solid $white;
+		}
+	}
+}
